@@ -133,6 +133,8 @@ int main(int argc, char* argv[])
     std::string usrMsg;
 
     while (std::getline(std::cin, usrMsg) && !usrMsg.empty()) {
+        if (usrMsg == "exit")
+            break;
         usrMsg = chatUser + ": " + usrMsg;
         topic.publish(usrMsg);
     }
